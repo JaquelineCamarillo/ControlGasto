@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="title">
+                <h1>Bienvenido</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li class="left">
+                        <a routerLink="/inicio-usuario">Monedero Inteligente</a>
+                    </li>
+                    <li class="right">
+                        <a (click)="loadCliengoChatbot()">
+                          <i class="fas fa-headset"></i>
+                          <span class="tooltip">Soporte Técnico</span>
+                        </a>
+                      </li>
+                    <li class="right">
+                        <a routerLink="/resumen">
+                            <i class="fas fa-file-alt"></i>
+                            <span class="tooltip">Resumen</span>
+                        </a>
+                    </li>
+                    <li class="right">
+                        <a routerLink="/twitch">
+                            <img src="https://www.iconninja.com/files/689/211/735/black-twitch-icon.png" alt="Twitch Icon" class="twitch-icon" />
+                            <span class="tooltip">Twitch</span>
+                        </a>
+                    </li>
+                    <li class="right">
+                        <a routerLink="/home">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span class="tooltip">Cerrar Sesión</span>
+                        </a>
+                    </li>
+                    <li class="right">
+                        <a routerLink="/usuario">
+                            <i class="fas fa-user"></i>
+                            Usuario
+                        </a>
+                    </li>
+                </ul>                
+            </nav>
+            <div class="info-container">
+                <div class="floating-window">
+                    <li class="left" *ngFor="let presupuesto of presupuestos">
+                        <a>Presupuesto total: ${{ presupuesto.PresupuestoTotal }}</a>
+                    </li>
+                </div>
+                <div class="floating-window">
+                    <li class="left" *ngFor="let presupuesto of presupuestos">
+                        <a>Presupuesto actual: ${{ presupuesto.PresupuestoActual }}</a>
+                    </li>
+                </div>
+            </div>                        
+        </header>       
+        <main class="main-content">
+            <section class="gastos">
+                <div class="card">
+                    <div class="face front">
+                        <img src="/assets/Gasto.jpg" alt="">
+                        <h3>Gastos</h3>
+                    </div>
+                    <div class="face back">
+                        <h2>Gasto</h2>
+                        <p>
+                            Aquí puedes registrar y seguir todas 
+                            las salidas de dinero, 
+                            como compras y pagos. 
+                            Esto te ayuda a controlar y analizar 
+                            cómo usas tus recursos financieros.
+                        </p>
+                        <div class="enlace">
+                            <a routerLink="/gastos/list">Ver mis gastos...</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="face front">
+                        <img src="/assets/ingreso.jpg" alt="">
+                        <h3>Ingresos</h3>
+                    </div>
+                    <div class="face back">
+                        <h2>Ingreso</h2>
+                        <p>
+                            Registra todas las entradas de dinero, 
+                            como las ventas de productos personalizados. 
+                            Esto te permite seguir el flujo de caja y 
+                            evaluar el rendimiento de tus ventas.
+                        </p>
+                        <div class="enlace">
+                            <a routerLink="/ingresos/list">Ver ingresos...</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="face front">
+                        <img src="/assets/mapas.jpg" alt="">
+                        <h3>Ubicaciones</h3>
+                    </div>
+                    <div class="face back">
+                        <h2>Ubicación</h2>
+                        <p>
+                            Mantente informado(a) enterate de los 
+                            lugares más cercanos a ti para nuevas
+                            compras, ve donde estan ubicados y que 
+                            te ofrecen todos los negocios y/o 
+                            empresas sercanas a ti. 
+                        </p>
+                        <div class="enlace">
+                            <a routerLink="/mapas">Ver el mapa...</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="financial-news-section">
+            <h3 class="news-title">Noticias de Financiamiento</h3>
+            <div *ngIf="newsArticles.length > 0; else noNews" class="news-grid">
+              <div *ngFor="let article of newsArticles" class="news-article">
+                <h4>{{ article.title }}</h4>
+                <p>{{ article.description }}</p>
+                <a [href]="article.url" target="_blank">Leer más</a>
+              </div>
+            </div>
+            <ng-template #noNews>
+              <p>No se encontraron noticias sobre financiamiento.</p>
+            </ng-template>
+
+            <!-- finanzas -->
+            <div class="financial-search">
+                <h3 class="finanzas-title">ACCIONES PARA INVERTIR</h3>
+                <app-finanzas></app-finanzas>
+            </div>
+  
+
+          </footer>
+          
+    </div>
+</body>
+</html>

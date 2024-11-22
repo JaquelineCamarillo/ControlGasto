@@ -1,0 +1,83 @@
+<!--<div *ngIf="stockData; else errorTemplate">
+    <h2>Datos de la Acción ({{ stockData.symbol }})</h2>
+    <p><strong>Precio actual:</strong> {{ stockData.c | currency }}</p>
+    <p><strong>Máximo del día:</strong> {{ stockData.h | currency }}</p>
+    <p><strong>Mínimo del día:</strong> {{ stockData.l | currency }}</p>
+    <p><strong>Precio de apertura:</strong> {{ stockData.o | currency }}</p>
+  </div>
+  
+  <ng-template #errorTemplate>
+    <p>{{ error }}</p>
+  </ng-template>-->
+  <!--AAAAeste digo es el funcional-->
+  <!--<div class="search-container">
+    <form (ngSubmit)="buscar()">
+      <input 
+        type="text" 
+        placeholder="Ingrese símbolo de acción (Ej: AAPL)" 
+        [(ngModel)]="simboloBusqueda" 
+        name="symbol" 
+        required 
+        class="search-input">
+      <button type="submit" class="search-button">Buscar</button>
+    </form>
+  </div>
+  
+  <div *ngIf="stockData; else errorTemplate">
+    <h2>Datos de la Acción ({{ stockData.symbol }})</h2>
+    <p><strong>Precio actual:</strong> {{ stockData.c | currency }}</p>
+    <p><strong>Máximo del día:</strong> {{ stockData.h | currency }}</p>
+    <p><strong>Mínimo del día:</strong> {{ stockData.l | currency }}</p>
+    <p><strong>Precio de apertura:</strong> {{ stockData.o | currency }}</p>
+  </div>
+  
+  <ng-template #errorTemplate>
+    <p>{{ error }}</p>
+  </ng-template>-->
+  <!--CODIGO OPCIONAL-->
+  <div class="finanzas-container">
+  <!-- Sección de Búsqueda -->
+  <div class="search-section">
+    <div class="search-container">
+      <form (ngSubmit)="buscar()" class="search-form">
+        <input 
+          type="text" 
+          placeholder="Ingrese símbolo de acción (Ej: AAPL)" 
+          [(ngModel)]="simboloBusqueda" 
+          name="symbol" 
+          required 
+          class="search-input">
+        <button type="submit" class="search-button" [disabled]="isLoading">Buscar</button>
+      </form>
+    </div>
+
+    <!-- Mensaje de Cargando -->
+    <div *ngIf="isLoading" class="loading-message">Cargando datos...</div>
+
+    <!-- Datos de la Acción -->
+    <div *ngIf="stockData; else errorTemplate" class="stock-data">
+      <h2>Datos de la Acción ({{ stockData.symbol }})</h2>
+      <p><strong>Precio actual:</strong> {{ stockData.c | currency }}</p>
+      <p><strong>Máximo del día:</strong> {{ stockData.h | currency }}</p>
+      <p><strong>Mínimo del día:</strong> {{ stockData.l | currency }}</p>
+      <p><strong>Precio de apertura:</strong> {{ stockData.o | currency }}</p>
+    </div>
+    
+    <!-- Plantilla de Error -->
+    <ng-template #errorTemplate>
+      <p class="error-message">{{ error }}</p>
+    </ng-template>
+  </div>
+
+  <!-- Contenedor Lateral para Símbolos Sugeridos -->
+  <div class="suggestions-container">
+    <h3>Símbolos Sugeridos</h3>
+    <ul>
+      <li (click)="simboloBusqueda = 'AAPL'">AAPL</li>
+      <li (click)="simboloBusqueda = 'GOOGL'">GOOGL</li>
+      <li (click)="simboloBusqueda = 'AMZN'">AMZN</li>
+      <li (click)="simboloBusqueda = 'MSFT'">MSFT</li>
+      <li (click)="simboloBusqueda = 'TSLA'">TSLA</li>
+    </ul>
+  </div>
+</div>
