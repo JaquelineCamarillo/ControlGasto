@@ -1,0 +1,130 @@
+/* Contenedor Principal */
+.finanzas-container {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  background-color: #000000;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  margin: auto;
+  font-family: Arial, sans-serif;
+}
+
+/* Sección de Búsqueda */
+.search-section {
+  flex: 1;
+}
+
+/* Formulario de Búsqueda */
+.search-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.search-form {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+.search-input {
+  flex: 1;
+  padding: 10px;
+  font-size: 1rem;
+  border: 2px solid #9C7215;
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+  border-color: #D8C751;
+  outline: none;
+}
+
+.search-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #9C7215;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+  background-color: #D8C751;
+}
+
+.loading-message {
+  color: #9C7215;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Datos de la Acción */
+.stock-data {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.stock-data h2 {
+  margin-bottom: 10px;
+  color: #333;
+  font-size: 1.25rem;
+}
+
+.stock-data p {
+  font-size: 1rem;
+  color: #555;
+  margin: 5px 0;
+}
+
+.error-message {
+  color: #e63946;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Contenedor de Sugerencias */
+.suggestions-container {
+  width: 200px;
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.suggestions-container h3 {
+  margin-bottom: 10px;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.suggestions-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.suggestions-container li {
+  font-size: 1rem;
+  color: #C1A60F;
+  padding: 5px 0;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.suggestions-container li:hover {
+  color: #9C7215;
+  font-weight: bold;
+}
+/*linear-gradient(5deg, 
+    #D8C751,  
+    #C1A60F,  
+    #B09118,  
+    #F9F772,
+    #9C7215);*/
