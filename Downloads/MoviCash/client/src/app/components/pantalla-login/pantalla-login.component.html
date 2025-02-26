@@ -1,0 +1,59 @@
+<body>
+	<!-- contenedor de la animacion junto con el logo ya verctorizado de forma correcta -->
+	<div class="animation-container">
+	  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+		<!-- Cuadrados superpuestos -->
+		<rect x="150" y="50" width="100" height="100" fill="none" stroke="#333333" stroke-width="3">
+		  <animate attributeName="stroke-dasharray" from="0, 600" to="600, 0" dur="2s" fill="freeze" />
+		  <animate attributeName="stroke-dashoffset" from="600" to="0" dur="2s" fill="freeze" />
+		</rect>
+		<rect x="160" y="60" width="100" height="100" fill="none" stroke="#333333" stroke-width="3">
+		  <animate attributeName="stroke-dasharray" from="0, 600" to="600, 0" dur="2s" begin="0.5s" fill="freeze" />
+		  <animate attributeName="stroke-dashoffset" from="600" to="0" dur="2s" begin="0.5s" fill="freeze" />
+		</rect>
+  
+		<!-- la letra M -->
+		<text x="200" y="125" font-family="Arial, sans-serif" font-weight="bold" font-size="60" 
+			  text-anchor="middle" fill="none" stroke="#333333" stroke-width="2">
+		  M
+		  <animate attributeName="stroke-dasharray" from="0, 180" to="180, 0" dur="2s" begin="1s" fill="freeze" />
+		  <animate attributeName="stroke-dashoffset" from="180" to="0" dur="2s" begin="1s" fill="freeze" />
+		  <animate attributeName="fill" from="none" to="#333333" dur="0.5s" begin="1s" fill="freeze"/>
+		</text>
+  
+		<!-- tecto movicash  -->
+		<text x="200" y="210" font-family="Arial, sans-serif" font-weight="400" font-size="30" 
+			  text-anchor="middle" letter-spacing="10" fill="none" stroke="#333333" stroke-width="2">
+		  MOVICASH
+		  <animate attributeName="stroke-dasharray" from="0, 300" to="300, 0" dur="4s" begin="1s" fill="freeze" />
+		  <animate attributeName="stroke-dashoffset" from="300" to="0" dur="4s" begin="1s" fill="freeze" />
+		  <animate attributeName="fill" from="none" to="#333333" dur="0.5s" begin="1s" fill="freeze"/>
+		</text>
+	  </svg>
+	</div>
+  
+	<!-- fondo despues de la animacion osea fondo  -->
+	<div class="PantallaFondo"></div>
+  
+	<!-- formulario login CONTENEDOR  -->
+	<div class="contenedorPosisionLogin">
+	  <div class="contenedorLogin" id="loginForm">
+		<p class="title">Inicia Sesión</p>
+		<form class="form">
+		  <div class="input-group">
+			<label for="username">Correo Electrónico</label>
+			<input type="text" name="username" id="username" placeholder="">
+		  </div>
+		  <div class="input-group">
+			<label for="password">Contraseña</label>
+			<input type="password" name="password" id="password" placeholder="">
+			<div class="forgot">
+			  <a href="#">Olvidaste tus Credenciales?</a>
+			</div>
+		  </div>
+		  <button class="buttonInicioSesion">Iniciar Sesión</button>
+		</form>
+	  </div>
+	</div>
+  </body>
+  

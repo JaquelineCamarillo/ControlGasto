@@ -1,0 +1,15 @@
+<div class="contenedor">
+    <h1>Verificación</h1>
+    <p>Por favor, ingresa el código de verificación que hemos enviado a tu correo electrónico.</p>
+    
+    <div class="input-contenedor">
+      <input 
+        type="text" 
+        [(ngModel)]="codigoVerificacion" 
+        placeholder="Código de verificación" 
+        maxlength="6"
+      />
+    </div>
+  
+    <button (click)="verificarCodigo()">Verificar</button>
+  </div>
